@@ -13,3 +13,27 @@ radio = read.table(abc, header = TRUE, sep = ",", stringsAsFactors = FALSE)
 str(radio)
 View(radio)
 
+y=read.table('rlec 03.txt')
+y
+z=read.table("rlec 03.txt", header = T)
+z
+
+library(xlsx)
+excel= read.xlsx('rlec 03.xlsx',sheetIndex = 1)
+excel
+
+efile= read.xlsx('rlec 03.xlsx',sheetIndex = 1, sheetName = 'rlec 03')
+efile
+efile1=read.xlsx('rlec 03.xlsx', 2)
+efile1
+
+library(gsheet)
+url="https://docs.google.com/spreadsheets/d/1SGc63CYu7rsluEcfkX_iC1vmfWGCImI7Gg67mA7juCg/edit?usp=sharing"
+abc=as.data.frame(gsheet2tbl(url))
+abc
+
+data()
+?write.csv
+
+write.csv(abc, file = "newdata")
+abc
