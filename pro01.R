@@ -37,3 +37,24 @@ data()
 
 write.csv(abc, file = "newdata")
 abc
+
+
+#Assignment operators
+#leftward
+h <- 10
+i <<- 11
+j = 12
+
+#rightward
+13 -> k
+14 ->> l 
+
+h #left
+i #left
+j #left
+k #right
+l #right
+
+
+
+
