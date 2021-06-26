@@ -55,6 +55,20 @@ j #left
 k #right
 l #right
 
+#Arithmetic Operators
+
+x = 5
+x
+y = 2
+y
+
+x + y #addition 
+x - y #Subtraction 
+x * y #multiplication
+x / y #division
+x ^ y #exponent 
+x %% y #gives the remaider
+x %/% y #gives the quotient
 
 
 
