@@ -71,4 +71,18 @@ x %% y #gives the remaider
 x %/% y #gives the quotient
 
 
+#logical Operators
+a = 5
+b = 9
+
+a < b 
+a > b
+a <= b 
+a >= b
+a == b
+a != b
+
+
+
+
 
