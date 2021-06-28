@@ -113,3 +113,34 @@ c(TRUE, TRUE, FALSE) || c(FALSE, FALSE, FALSE)
 
 c(TRUE, TRUE, FALSE) && c(TRUE, FALSE, FALSE)
 c(TRUE, TRUE, FALSE) || c(FALSE, FALSE, FALSE)
+
+#Data Structures
+##Vectors----
+#Numeric
+x = c(2,3,4)
+x
+class(x)
+length(x)
+
+#characters
+y = c('a', 'b', 'c')
+y
+class(y)
+
+#logical
+z= c(TRUE, TRUE, FALSE, FALSE)
+
+#Integers
+a = c(1L, 2L, 3L)
+class(a)
+
+#Adding element to vector
+y = c(y, 'd')
+y
+
+#vectors from a Sequence of numbers 
+series= 1:10
+seq(10)
+seq(1,10,1.5)
+
+
