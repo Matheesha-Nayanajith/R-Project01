@@ -102,7 +102,11 @@ is.numeric(5)
 !is.numeric(5)
 
 
+c(TRUE, TRUE, FALSE) & c(TRUE, FALSE, FALSE)
 
+c(TRUE, TRUE, FALSE) | c(TRUE, FALSE, FALSE)
 
+!c(TRUE, FALSE, FALSE)
 
-
+c(TRUE, TRUE, FALSE) && c(TRUE, FALSE, FALSE)
+c(TRUE, TRUE, FALSE) || c(FALSE, FALSE, FALSE)
