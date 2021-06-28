@@ -144,3 +144,16 @@ seq(10)
 seq(1,10,1.5)
 
 
+#matrix 
+m= matrix(1:10, nrow = 2, ncol = 5)
+m
+#checking dimension 
+dim(m)
+
+#matrix filled row wise with giving names to rows and columns
+(mymatrix= matrix(1:6,nrow = 3, byrow = T, dimnames = list(c("d", "e", "f"), c("a", "b")) ))
+
+#matrix filled column wise
+(mymatrix= matrix(1:6,nrow = 3,byrow = F))
+
+
