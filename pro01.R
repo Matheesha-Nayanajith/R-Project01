@@ -156,4 +156,6 @@ dim(m)
 #matrix filled column wise
 (mymatrix= matrix(1:6,nrow = 3,byrow = F))
 
-
+m <- 1:10
+dim(m) = c(5,2)
+m
