@@ -159,3 +159,19 @@ dim(m)
 m <- 1:10
 dim(m) = c(5,2)
 m
+
+#adding column to matrix (cbind)
+c= c(7,8,9)
+mymatrix1= cbind(mymatrix, c)
+mymatrix1
+
+d= c(10,11,12)
+mymatrix2= cbind(mymatrix1, d)
+mymatrix2
+
+#Adding row to a matrix (rbind)
+g= c(13,14,15,16)
+mymatrix3= rbind(mymatrix2, g)
+mymatrix3
+
+
