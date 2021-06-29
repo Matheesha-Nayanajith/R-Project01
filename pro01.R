@@ -175,3 +175,18 @@ mymatrix3= rbind(mymatrix2, g)
 mymatrix3
 
 
+
+#List
+(v1 = 1:5)
+class(v1)
+(v2 = month.abb[4:10])
+class(v2)
+(v3 = c(T, F, T, F))
+class(v3)
+(combinedV = c(v1 ,v2 ,v3))
+class(combinedV)
+
+list1 = list(v1,v2, v3)
+list1
+
+
