@@ -201,5 +201,14 @@ result <- array(c(vector1,vector2),dim = c(3,3,2), dimnames = list(row.names,col
 print(result)
 
 
+df1 = data.frame(name = c('S1','S2','S3'), age=c(22, 23, 24))
+df1
 
+#creat using vectors
+(rollno = 1:10)
+(name = paste('S', 1:10, sep = ''))
+(age = round(rnorm(10, mean = 25, sd=2),1))
+(gender = sample(c('M','F'),size=10, replace = T))
+df2 = data.frame(rollno, name, age, gender)
+df2
 
