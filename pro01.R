@@ -212,3 +212,40 @@ df1
 df2 = data.frame(rollno, name, age, gender)
 df2
 
+#for installing single package 
+install.packages('dplyr')
+
+#for installing multiple packages
+install.packages(c('plotly','readr'))
+
+#function to load single package is
+library(dplyr)
+
+#function to used to multipale packages is :
+install.packages('pacman')
+pacman::p_load(dplyr, tidyr, lubridate)
+
+#to view loaded package 
+search()
+
+#to unload a package
+detach("dplyr", unload = T)
+
+#remove installed packages
+remove.packages("dplyr")
+
+
+#updating all the existing installing packages
+update.packages()
+
+#updating selected packages
+update.packages(oldPkgs = c('dplyr','lubridate'))
+
+
+
+
+
+
+
+
+
