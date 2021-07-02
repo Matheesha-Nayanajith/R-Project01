@@ -44,6 +44,13 @@ a[3,3]
 #excluding 2nd column 2nd row
 a[-2,-2]
 
+#subsettting data frame
+df <- data.frame(x = 4:6, y = 3:1, z = letters[1:3])
+df
+
+df[df$y == 1, ]
+
+
 
 
 
