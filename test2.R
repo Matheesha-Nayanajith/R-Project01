@@ -101,3 +101,23 @@ c(TRUE, TRUE, FALSE) || c(FALSE, FALSE, FALSE)
 
 c(TRUE, TRUE, FALSE) && c(TRUE, FALSE, FALSE)
 c(TRUE, TRUE, FALSE) || c(FALSE, FALSE, FALSE)
+
+
+abc = "https://support.staffbase.com/hc/en-us/article_attachments/360009197031/username.csv"
+radio = read.table(abc, header = TRUE, sep = ",", stringsAsFactors = FALSE)
+str(radio)
+View(radio)
+
+y=read.table('rlec 03.txt')
+y
+z=read.table("rlec 03.txt", header = T)
+z
+
+library(xlsx)
+excel= read.xlsx('rlec 03.xlsx',sheetIndex = 1)
+excel
+########
+efile= read.xlsx('rlec 03.xlsx',sheetIndex = 1, sheetName = 'rlec 03')
+efile
+efile1=read.xlsx('rlec 03.xlsx', 2)
+efile1
