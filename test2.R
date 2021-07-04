@@ -116,7 +116,7 @@ z
 library(xlsx)
 excel= read.xlsx('rlec 03.xlsx',sheetIndex = 1)
 excel
-
+########
 efile= read.xlsx('rlec 03.xlsx',sheetIndex = 1, sheetName = 'rlec 03')
 efile
 efile1=read.xlsx('rlec 03.xlsx', 2)
