@@ -121,3 +121,84 @@ efile= read.xlsx('rlec 03.xlsx',sheetIndex = 1, sheetName = 'rlec 03')
 efile
 efile1=read.xlsx('rlec 03.xlsx', 2)
 efile1
+
+#sub setting data frame----
+df<-data.frame(x=1:3,y=3:1,z=letters[1:3])
+df
+df[df$x==2,]
+
+df[df$y==2,]
+
+df[df$x==1,]
+df[df$x==3,]
+
+
+#Sub setting a function
+set.seed(1234)
+x<-round(matrix(rnorm(30,1), ncol=5),2)
+y<-c(1,seq(5))
+#combining x and y into one matrix
+x<-cbind(x,y)
+x
+
+#converting x into data frame x.df
+x.df<-data.frame(x)
+x.df
+?rnorm
+
+#sub-setting rows using the subset function
+subset(x.df,y>2)
+
+#sub-setting rows using multiple conditional statements
+subset(x.df,y>2 & V1>0.2)
+
+#sub-setting both rows and columns
+?subset
+subset(x.df,y>2 & V2>0.4,select=c(V1,V4))
+
+
+#Sub-setting which()statement and conditional statements
+#Which function----
+?which
+
+letters
+which(letters=="z")
+which(letters=="s")
+
+#using data frame WOMEN
+women
+which(women$height==66)
+which(women$height>=70)
+
+#which for sub-setting vector and using conditions
+#example1
+j=c(2,3,4,5,6,7,8,9,23,24,22,1,10)
+j>6
+which(j>6)
+a=j[which(j>6)]
+a
+
+letters
+LETTERS
+which(LETTERS=="K")
+
+#Example2
+marks=c(10,20,30,40,60)
+which(marks>30)
+marks[which(marks>30)]
+
+#example3-using grep command
+names=c('jack','jill','tom','jerry','buggs','bunny')
+#which names have bu
+grep('[bu]',names,ignore.case=T)
+names[grep('[bu]',names,ignore.case=T)]
+
+?grep
+
+#example4
+mtcars
+which(mtcars$mpg>25)
+mtcars[which(mtcars$mpg>25),]
+
+
+
