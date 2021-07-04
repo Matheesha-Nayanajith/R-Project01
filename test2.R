@@ -201,4 +201,53 @@ which(mtcars$mpg>25)
 mtcars[which(mtcars$mpg>25),]
 
 
+#compute the mean
+mean(mtcars$mpg)
+
+#compute the median value
+median(mtcars$mpg)
+
+#compute the variance 
+var(mtcars$mpg)
+
+#compute the standerd deviation 
+sd(mtcars$mpg)
+
+#compute the minimum value
+min(mtcars$mpg)
+
+#compute the maximum value
+max(mtcars$mpg)
+
+#range
+range(mtcars$mpg)
+
+#generic function
+summary(mtcars$mpg)
+
+#interquartil rang 
+quantile(mtcars$mpg, probs = seq(0, 1, 0.25))
+
+#column and row sum, solumn and row means
+df = data.frame(a=c(1,2,3,4,5,6,7), b=c(7,6,5,4,3,2,4))
+df
+
+#column sum 
+colSums(df)
+
+#row sum
+rowSums(df)
+
+#column means
+colMeans(df)
+
+#row means
+rowMeans(df)
+
+
+
+
+
+
+
 
