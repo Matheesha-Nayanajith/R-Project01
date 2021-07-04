@@ -74,4 +74,11 @@ subset(x.df, y > 2 & V1 > 0.2)
 ?subset
 subset(x.df, y > 2 & V2 > 0.4, select = c(V1, V4))
 
+#creat using vectors
+(rollno = 1:10)
+(name = paste('S', 1:10, sep = ''))
+(age = round(rnorm(10, mean = 25, sd=2),1))
+(gender = sample(c('M','F'),size=10, replace = T))
+df2 = data.frame(rollno, name, age, gender)
+df2
 
