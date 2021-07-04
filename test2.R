@@ -82,3 +82,22 @@ subset(x.df, y > 2 & V2 > 0.4, select = c(V1, V4))
 df2 = data.frame(rollno, name, age, gender)
 df2
 
+#NOT operator
+!(f < 5)
+f < 5
+
+is.numeric(5)
+!is.numeric(5)
+
+
+c(TRUE, TRUE, FALSE) & c(TRUE, FALSE, FALSE)
+
+c(TRUE, TRUE, FALSE) | c(TRUE, FALSE, FALSE)
+
+!c(TRUE, FALSE, FALSE)
+
+c(TRUE, TRUE, FALSE) && c(TRUE, FALSE, FALSE)
+c(TRUE, TRUE, FALSE) || c(FALSE, FALSE, FALSE)
+
+c(TRUE, TRUE, FALSE) && c(TRUE, FALSE, FALSE)
+c(TRUE, TRUE, FALSE) || c(FALSE, FALSE, FALSE)
