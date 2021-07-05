@@ -272,11 +272,38 @@ row.sums
 
 apply(x, 2, sort)
 
-#1 (margin) is for rows
+#lapply----
+#Eg1:
 
+#Create a list of matrices
+(A = matrix(1:9,nrow = 3, byrow = F))
+(B = matrix(4:15,nrow = 4, byrow = F))
+(C = data.frame(x=c(8,9,10),y=c(8,9,10)))
+MyList <- list(A,B,C)
+MyList
 
+#Extract the 2nd column from 'MyList' with the selection operator '[' with lappli()
+lapply(MyList,"[",, 2)
 
+# Extract the 1st row from 'MyList'
+lapply(MyList,"[", 1, )
 
+#Extract a single element for each matrice from "MyList"
+lapply(MyList,"[", 1, 2)
+MyList
+
+#Eg2:
+movies <- c("SPIDERMAN","BATMAN","VERTIGO","CHINATOWN")
+movies_lower <- lapply(movies, tolower)
+movies_lower
+
+#Sapply()----
+A = lapply(MyList,"[", 1, 1)
+A
+Z = sapply(MyList,"[", 1, 1)
+Z
+
+#tapply----
 
 
 
