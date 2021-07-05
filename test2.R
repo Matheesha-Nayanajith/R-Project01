@@ -304,6 +304,15 @@ Z = sapply(MyList,"[", 1, 1)
 Z
 
 #tapply----
+#mean MPG of each AM type in mtcars... df = mtcars %>% select(-am)
+names(mtcars)
+AM1=mtcars[,'am']
+AMCYL1 = mtcars[, c('cyl','am')]
+MPG1=mtcars[, c('mpg')]
+tapply(MPG1, AM1, mean)
+tapply(MPG1, AMCYL1, mean)
+?tapply
+head(mtcars)
 
 
 
