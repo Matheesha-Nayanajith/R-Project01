@@ -314,9 +314,19 @@ tapply(MPG1, AMCYL1, mean)
 ?tapply
 head(mtcars)
 
+#rep()
+z = sapply(MyList,"[", 1, 1)
+z
+
+a = rep(z,c(3,1,2))
+a
+?rep
 
 
+#mapplly
+q = matrix(c(rep(1, 4), rep(2, 4), rep(3, 4), rep(4, 4)),4,4)
+q
+p = mapply(rep,1:4,4)
+p
 
-
-
-
+mapply(sum, 1:4, 1:4, 1:4)
