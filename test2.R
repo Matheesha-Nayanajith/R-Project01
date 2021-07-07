@@ -330,3 +330,22 @@ p = mapply(rep,1:4,4)
 p
 
 mapply(sum, 1:4, 1:4, 1:4)
+
+
+chickwts
+
+head(ChickWeight)
+
+data = ChickWeight
+dim(data)
+
+aggregate(data$weight, by = list(diet = data$Diet), FUN = 'mean')
+
+aggregate(data$weight, by = list(time = data$Time, diet = data$Diet), FUN = 'mean')
+
+head(aggregate(data$weight, by = list(time = data$Time, diet = data$Diet), FUN = mean))
+
+
+
+
+
