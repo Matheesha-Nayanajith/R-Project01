@@ -331,21 +331,29 @@ p
 
 mapply(sum, 1:4, 1:4, 1:4)
 
+#Aggregate Function in R----
+chickwts #to understand the function
 
-chickwts
+head(ChickWeight)#using a inbuilt dataset
 
-head(ChickWeight)
+data = ChickWeight#copying the dataset to another veriable for ease
+dim(data) #checking dimension of the dataset
 
-data = ChickWeight
-dim(data)
+# Now to use aggregate; the usage as defined by ? aggregate:
+# aggregate(x, by, FUN, )
 
+#aggregating the mean weight depending on diet
 aggregate(data$weight, by = list(diet = data$Diet), FUN = 'mean')
 
+#find the mean weight depending on time and diet
 aggregate(data$weight, by = list(time = data$Time, diet = data$Diet), FUN = 'mean')
 
+#to get first 6 and last 6 data, use function head() and tail()
 head(aggregate(data$weight, by = list(time = data$Time, diet = data$Diet), FUN = mean))
+tail(aggregate(data$weight, by = list(time = data$Time, diet = data$Diet), FUN = mean))
 
-
+#finding max weight for each diet
+aggregate(data$weight, by = list(diet = data$Diet), FUN = max)
 
 
 
