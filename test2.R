@@ -371,7 +371,24 @@ aggregate(ad$salary, by = list(Name = ad$name), FUN = mean)
 aggregate(ad$salary, by = list(Gender = ad$gender), FUN = mean)
 
 #aggregating salary based on rollno and name
-aggregate(ad$salary, by = list(ad$name,ad$rollno), FUN = mean)
+aggregate(ad$salary, by = list(Name = ad$name,RollNo = ad$rollno), FUN = mean)
 
 
+mtcars
+str(mtcars)
+
+#table
+?table
+table(mtcars$cyl)
+table(mtcars$cyl, mtcars$gear)
+table(mtcars$cyl, mtcars$gear, dnn=c('cyl', 'gear'))#dnn = dimensiom names
+#store in expression t1
+
+t1 = table(mtcars$cyl, mtcars$gear, dnn=c('cyl', 'gear'))
+t1
+
+#margin.table
+margin.table(t1)
+margin.table(x=t1, margin = 1)#cylinder wise 
+margin.table(x=t1, margin = 2)#gear wise 
 
