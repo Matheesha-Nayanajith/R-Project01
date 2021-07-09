@@ -357,3 +357,21 @@ aggregate(data$weight, by = list(diet = data$Diet), FUN = max)
 
 
 
+#reading data to do another aggregatation 
+#using package rlec 03
+library(xlsx)
+
+ad = read.xlsx('rlec 03.xlsx', sheetName = 2)
+ad
+
+#finding mean salary expenditure based on name
+aggregate(ad$salary, by = list(Name = ad$name), FUN = mean)
+
+#aggregting salary based on gender
+aggregate(ad$salary, by = list(Gender = ad$gender), FUN = mean)
+
+#aggregating salary based on rollno and name
+aggregate(ad$salary, by = list(ad$name,ad$rollno), FUN = mean)
+
+
+
