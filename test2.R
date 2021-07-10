@@ -392,3 +392,12 @@ margin.table(t1)
 margin.table(x=t1, margin = 1)#cylinder wise 
 margin.table(x=t1, margin = 2)#gear wise 
 
+
+#addmargins - extend a table with the marginal totals of the rows and colimns
+#add different functions over the margins
+addmargins(A=t1, margin = 1)#Default is sum: sum of each column, shows and row
+addmargins(A=t1, margin = 2, FUN = mean)#mean as column of eaach row 
+addmargins(A=t1, margin = c(1,2), FUN = sum)#sum at both row and column 
+addmargins(A=t1, margin = c(1,2), FUN=c(sum,mean)) #two function on rows/col margins
+#diferent functions in rows and columns
+addmargins(A=t1, margin = c(1,2), FUN=list(list(sum,mean, length, mean), list(sd, sum)))
