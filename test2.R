@@ -329,7 +329,7 @@ q
 p = mapply(rep,1:4,4)
 p
 
-mapply(sum, 1:4, 1:4, 1:4)
+mapply(mean, 1:4, 1:4, 1:4, 1:4)
 
 #Aggregate Function in R----
 chickwts #to understand the function
@@ -424,6 +424,42 @@ matrix(paste(prop.table(x=t1)*100 , '%', sep = ''), ncol = 3)
 rowSums(prop.table(t1, margin = 1))#correct
 rowSums(prop.table(t1, margin = 2))
 colSums(prop.table(t1, margin = 2))
+
+
+df = mtcars
+factorcols = c('cyl','vs','am','gear','crab')
+
+df[factorcols] = lapply(df[factorcols] ,factor, ordered=T)
+sapply(df, class) #check the class these clos belong to 
+str(df)
+abbreviate(rownames(df))#abbrevite the carnames
+names(df)
+table(df$cyl) #cylinder wise summary
+table(df$am)#transmission wise
+
+
+#combine it in single command 
+sapply(df[factorcols],table)
+
+select(mtcars,mpg)
+a = df %>% select(mpg)
+b = mtcars %>% select(mpg, cyl, am)
+head(b)
+
+#rename : change column name and save it in same variable in oder to update it in your records
+b = b %>% rename(MPG = mpg)
+head(b)
+b = b %>% rename(CYL = cyl,AM = am)
+head(b)
+
+
+
+
+
+
+
+
+
 
 
 
