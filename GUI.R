@@ -39,4 +39,37 @@ lapply(mtcars[,c('cyl','gear','am')], table)#count of each category cols
 plot(x = mtcars$wt, y = mtcars$mpg, col = c(1,2,3), pch = c(20,21,22), cex=c(1,2), xlab = 'Weight' , ylab = 'Mileage' , main = "Weight vs Mileage")
 
 
+?InsectSprays
+InsectSprays
+
+?boxplot
+#showing mean of mpg
+boxplot(x=mtcars$mpg, col = 'green') #col = column for plotting 
+abline(h=mean(mtcars$mpg))
+
+abline(h=quantile(mtcars$mpg))
+boxplot(x=mtcars$mpg, col = 'green', horizontal = T)#horizental = directon of boxplot
+
+# boxplot on a formula:
+?InsectSprays
+boxplot(count ~ spray, data = InsectSprays, col = "lightgray")
+# *add* notches (somewhat funny here <--> wrnning "notches.. outside hinges"):
+boxplot(count ~ spray, data = InsectSprays,
+        notch = T, col = "blue")
+
+#notch is used to compare groupps in the notched boxplot, if two boxes' notces do not overlap this is 
+##if we put notch=T,we'll get a warning message by saying " some notches went outside hinges ('box'):maybe set notch=FALSE"
+
+
+#Using formula for mtcars 
+boxplot(mpg ~ cyl, data = mtcars,
+        xlab = "Number of cylinders",
+        ylab = "Miles per Gallon",
+        motch = TRUE,
+        main = "Mileage Data",
+        col = c("green","yellow","purple"),
+        names = c("High","Medium","Low"))
+
+
+
 
