@@ -72,4 +72,30 @@ boxplot(mpg ~ cyl, data = mtcars,
 
 
 
+#graph autos with adjacent bars using rainbow colours
+cars <- c(1, 3, 6, 4, 9)
+trucks <-c(2, 5, 4, 5, 12)
+suvs = c(4,4,6,6,16)
+autos_data = data.frame(cars,trucks,suvs)
+autos_data
+barplot(autos_data$cars, main ="Auto Data", xlab = "Days",
+        ylab = "Total", names.arg=c("Mon","Tue","wed","Thu","Fri"),
+        border="blue", density=c(10,20,30,40,50))
+
+#graph autos with adjactent bar using rainbow colours
+barplot(as.matrix(autos_data), main ="autos", ylab = "Tatal",
+        beside = T, col = rainbow(5))
+
+
+
+legend("topleft", c("Mon","Tue","wed","Thu","Fri"), cex=1,
+       byt="n", fill = rainbow(5))
+
+
+
+
+
+
+
+
 
