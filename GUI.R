@@ -100,6 +100,11 @@ barplot(t(autos_data),main="Autos", ylab="Total",
         col=heat.colors(3),space=0.1, cex.axis=0.8, las=1,
         names.arg=c("Mon","Tue","Wed","Thu","Fri"),cex=0.8)
 
+legend("topleft", c("Cars","Trucks","Suvs"),cex=1,
+       bty="n", fill=heat.colors(3))
+
+legend("top", c("Cars","Trucks","Suvs"),cex=1,
+       bty="n", fill=heat.colors(3))
 
 
 
