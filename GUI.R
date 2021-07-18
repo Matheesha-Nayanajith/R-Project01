@@ -91,7 +91,14 @@ barplot(as.matrix(autos_data), main ="autos", ylab = "Tatal",
 legend("topleft", c("Mon","Tue","wed","Thu","Fri"), cex=1,
        byt="n", fill = rainbow(5))
 
+#graph autos (transposing the matrix) using heat colours
+#put 10% of the space between each bar, and make labels
+#smaller with horizental y-axis lables
+autos_data
 
+barplot(t(autos_data),main="Autos", ylab="Total",
+        col=heat.colors(3),space=0.1, cex.axis=0.8, las=1,
+        names.arg=c("Mon","Tue","Wed","Thu","Fri"),cex=0.8)
 
 
 
