@@ -106,8 +106,15 @@ legend("topleft", c("Cars","Trucks","Suvs"),cex=1,
 legend("top", c("Cars","Trucks","Suvs"),cex=1,
        bty="n", fill=heat.colors(3))
 
+?hist
+#Histogrm for a normally distributed data 
+hist(rnorm(1000))
+hist(rnorm(1000), probability = T)
 
-
+#histogrm for a skewed data 
+hist(islands)#gives results in frequencies
+hist(islands,probability = T)#proportion (or probabilities)
+hist(islands, breaks = 5, main = "islands histogrm", xlab = "Area range", border = "red", col = "grey")
 
 
 
