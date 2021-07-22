@@ -228,6 +228,55 @@ lbls <-c("US","UK","AUS","GER","FRNS")
 pie3D(slices,labels = lbls,explode = 0.2,
       main = "pie chart of Countries")
 
+#GGPlot2 ----
+library(ggplot2)
+library(dplyr)
+
+mtcars
+
+#SCATTER PLOT ----
+
+#basic scatter plot (wt vs mpg)
+plot(mtcars$wt, mtcars$mpg)
+
+#1st layer of ggplot - creating base for plotting
+ggplot(data = mtcars, aes(x=wt, y=mpg))
+
+#adding geometry to graph
+ggplot(data = mtcars, aes(x=wt, y=mpg)) + geom_point()
+
+#adding aesthetics : color, size and shape of point
+ggplot(data = mtcars, aes(x=wt, y=mpg)) + geom_point(color='red', size=3)
+ggplot(data = mtcars, aes(x=wt, y=mpg)) + geom_point(color='red', size=3, shape = 20)
+head(mtcars)
+table(mtcars)
+table(mtcars$gear)
+table(mtcars$carb)
+table(mtcars$am)
+
+#adding different dimensions of ggplot now : adding col as per no, of cyl
+#ggplot(data = mtcars, aes(x=wt, y=mpg)) + geom_point(color = cyl, size=3, shape=20) Error
+ggplot(data = mtcars, aes(x=wt, y=mpg)) + geom_point(aes(color = cyl), size=3, shape=20)
+ggplot(data = mtcars, aes(x=wt, y=mpg)) + geom_point(aes(color = factor(cyl)), size = 3,
+                                                     shape = 20)
+
+#adding different dimensions to ggplot now : adding size as per types of transmission 
+ggplot(data = mtcars, aes(x=wt, y=mpg)) + geom_point(aes(color = factor(cyl), size = factor(am)), shape = 20)
+
+#adding different dimensions to ggplot now : adding size as per types of transmission 
+ggplot(data = mtcars, aes(x=wt, y=mpg)) + geom_point(aes(color = factor(cyl), size = factor(am), shape = factor(gear)))
+
+#adding labales to the graph 
+ggplot(data = mtcars, aes(x=wt, y=mpg)) + geom_point(aes(shape=factor(gear), size=factor(am), color=factor(
+cyl))) + labs(title = 'Adding dimensions to graph', subtitle = 'Scatter Plot', x='weight', y='Mileage')
+
+
+
+
+
+
+
+
 
 
 
