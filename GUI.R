@@ -270,14 +270,15 @@ ggplot(data = mtcars, aes(x=wt, y=mpg)) + geom_point(aes(color = factor(cyl), si
 ggplot(data = mtcars, aes(x=wt, y=mpg)) + geom_point(aes(shape=factor(gear), size=factor(am), color=factor(
 cyl))) + labs(title = 'Adding dimensions to graph', subtitle = 'Scatter Plot', x='weight', y='Mileage')
 
+#adding text to points, name of the cars
+ggplot(data=mtcars, aes(x=wt, y=mpg)) + geom_point(aes(color = factor(cyl), size=factor(am), shape = factor(gear))) + facet_grid(cyl + vs~carb) + labs(title='Adding dimensions to graph ', subtitle = 'Scatter Plot', x= 'Weight', y ='Mileage') + geom_text(aes(labal = rownames(mtcars)), size = 2.5)
+ggplot(data=mtcars, aes(x=wt, y=mpg)) + geom_point(aes(color = factor(cyl), size=factor(am), shape = factor(gear))) + facet_grid(cyl + vs~carb) + labs(title='Adding dimensions to graph ', subtitle = 'Scatter Plot', x= 'Weight', y ='Mileage') + geom_text(aes(label = rownames(mtcars)), size = 2.5)
 
 
 
-
-
-
-
-
+#adding text to points,name of the cars using ggrepel package to make graph tidy
+library(ggrepel)
+ggplot(data=mtcars, aes(x=wt,y=mpg))+ geom_point(aes(color=factor(cyl),size=factor(am),shape=factor(gear)))+ facet_grid(vs~carb)+labs(title='Adding dimensions to graph', subtitle='Scatter Plot', x='Weight', y='Mileage') +  ggrepel::geom_text_repel(aes(label=rownames(mtcars)),size=2.5)
 
 
 
