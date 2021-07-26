@@ -303,3 +303,15 @@ mtcars %>% group_by(cyl,gear,am,vs) %>% summarise (n=n()) %>% ggplot(.,aes(x=cyl
 #updating facetlayer-scales and space = free--makes full use of the graph areas otherwise the values are very small so the bars will also be short-zooms the graph by auto selecting the limits
 
 mtcars %>% group_by(cyl,gear,am,vs) %>% summarise (n=n()) %>% ggplot(.,aes(x=cyl,y=n))+ geom_bar(stat='identity',aes(fill=factor(cyl)))+ geom_text(aes(label=n))+facet_grid(gear~am, scales='free',space='free')
+
+# HEAT MAP ----
+
+a = mtcars %>% group_by(cyl,gear) %>% summarise(n=n())
+a
+ggplot(a, aes(x=factor(cyl), y=factor(gear), fill=n)) + geom_tile()
+
+ggplot(a, aes(x=factor(cyl), y=factor(gear), fill=n)) + geom_tile() + geom_text(aes(label=n), size=6)
+
+ggplot(a, aes(x=factor(cyl), y=factor(gear), fill=n)) + geom_tile() + geom_text(aes(label=n), size=6) + scale_fill_gradient2()
+
+
