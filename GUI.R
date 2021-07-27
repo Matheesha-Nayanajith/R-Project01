@@ -315,3 +315,43 @@ ggplot(a, aes(x=factor(cyl), y=factor(gear), fill=n)) + geom_tile() + geom_text(
 ggplot(a, aes(x=factor(cyl), y=factor(gear), fill=n)) + geom_tile() + geom_text(aes(label=n), size=6) + scale_fill_gradient2()
 
 
+
+
+?women
+women
+str(women)
+dim(women)
+
+#check linearity of data set first by plotting it 
+plot(women$height,women$weight)
+
+#building a model for women data set 
+lmmodel = lm(weight ~ height, dat = women)
+lmmodel
+
+#checking summary of the model
+summary(lmmodel)
+
+#plotting a regression line on graph to shown the relationship
+abline(lm(weight ~ height, data = women), col='red', lwd = 1)
+
+#predicting the value of y (weight) with a new data of x (height)
+head(women)
+range(women$weight)
+range(women$height)
+newdata = data.frame(height = c(50, 75, 80, 85))
+pred_weight = predict(lmmodel, newdata)
+pred_weight
+
+#cheking  assumpitions of the model by daignostic plotting 
+plot(lmmodel)
+
+
+
+
+
+
+
+
+
+
