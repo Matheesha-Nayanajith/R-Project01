@@ -346,9 +346,49 @@ pred_weight
 #cheking  assumpitions of the model by daignostic plotting 
 plot(lmmodel)
 
+names(mtcars)
+View(mtcars)
+plot(mpg~hp, data = mtcars)
+plot(mpg~wt, data = mtcars)
+result<-lm(mpg~hp+wt, data = mtcars)
+summary(result)
 
+#value of adjusted R2 = 0.82,
+#means that 82% of the variance in the measure of mpg can be predicted by hp and wt.
 
+#checking multicollnearity
+result<-lm(mpg~hp+wt+disp+cyl+gear , data = mtcars)
+summary(result)
 
+#----example 03
+#create training and test data
+trainingRowIndex <- sample(1: nrow(mtcars), 0.8*nrow(mtcars))
+
+trainingData <- mtcars[trainingRowIndex, ]
+testData <- mtcars[-trainingRowIndex, ]
+
+#build the model on training data ----
+lmMod <- lm(mpg~ cyl
+            +disp
+            +hp
+            +wt, data = trainingData)
+
+summary(lmMod)
+
+#predicition ----
+#prediciting values for test dataset
+testData$mpgPred <- predict(lmMod, testData)
+View(testData)
+
+#accuracy----
+#determining predicion accueacy on test dataset using MAPE
+
+mape <- mean(abs((testData$mpgPred - testData$mpg))/testData$mpg)
+mape
+
+#checking assumtions through daignostic plots
+plot(lmMod)
+lmMod
 
 
 
