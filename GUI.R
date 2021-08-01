@@ -405,9 +405,9 @@ mydata$admit = as.factor(mydata$admit)
 str(mydata)
 dim(mydata)
 
-#wo waya 
-#
-#
+#wo way contingency table of categorical outcome and predictors we want  
+#to make sure there are not 0 cells
+#which rank of institute are more successful (in nos/ %) in getting admitted - 2/1
 xtabs(~admit +  rank, data = mydata)
 #model 1
 mylogit = glm(admit ~ gre + gpa + rank, data = mydata, family = "binomial")
