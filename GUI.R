@@ -373,6 +373,7 @@ lmMod <- lm(mpg~ cyl
             +hp
             +wt, data = trainingData)
 
+
 summary(lmMod)
 
 #predicition ----
@@ -389,6 +390,31 @@ mape
 #checking assumtions through daignostic plots
 plot(lmMod)
 lmMod
+
+mtcars
+
+mydata <- read.csv("https://stats.idre.ucla.edu/stat/data/binary.csv")
+head(mydata)
+str(mydata)
+summary(mydata)
+sapply(mydata,sd)
+
+#rank is a categorical values , but is saved in integer datatype ; lets convert it to factors
+mydata$rank = as.factor(mydata$rank)
+mydata$admit = as.factor(mydata$admit)
+str(mydata)
+dim(mydata)
+
+#wo waya 
+#
+#
+xtabs(~admit +  rank, data = mydata)
+#model 1
+mylogit = glm(admit ~ gre + gpa + rank, data = mydata, family = "binomial")
+summary(mylogit)
+
+
+
 
 
 
