@@ -413,7 +413,28 @@ xtabs(~admit +  rank, data = mydata)
 mylogit = glm(admit ~ gre + gpa + rank, data = mydata, family = "binomial")
 summary(mylogit)
 
+#model 2
+#Building the logestic regression model
 
+n = nrow(mydata)
+sample = sample(1:n, size = round(0.7*n), replace = F)
+train = mydata[sample,]
+test = mydata[-sample,]
+
+?glm
+logR1 = glm(admit ~ gre+gpa+rank, train, family = binomial)
+logR1
+summary(logR1)
+
+
+?predict
+predicted = predict(logR1, newdata = test, type = 'response')
+head(predicted)
+predicteV = factor(ifelse(predicted <0.5,0, 1))
+head(predicteV)
+test = cbind(test, predicteV)
+head(test)
+str(test)
 
 
 
