@@ -1,3 +1,6 @@
+library(rpart.plot)
+library(rpart)
+
 pacman::p_load(rpart, rpart.plot, dplyr)
 
 #classification tree
@@ -51,3 +54,29 @@ dt3
 rpart.plot(dt3)
 rpart.plot(dt3,type=1, extra=104, nn=T,cex=.9)
 rpart.plot(dt3,type=1, extra=104, nn=T,cex=.9)
+
+
+
+printcp(dt3)
+
+
+dt3b <- prune(dt3, cp=.01)
+dt3b
+rpart.plot(dt3b, type=2, extra=104, nn=T, cex=.9)
+
+dt3c <- prune(dt3, cp=.018)
+dt3c
+rpart.plot(dt3c, type=2, extra=104, nn=T, cex=.8)
+
+head(testSet)
+pred1 = predict(dt3b, newdata=testSet, type='class')
+head(pred1)
+pred2 = predict(dt3b, newdata=testSet, type='prob')
+head(pred2)
+
+caret::confusionMatrix(testSet$survived, pred1)
+
+
+
+
+
