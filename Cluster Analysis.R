@@ -51,8 +51,3 @@ cluster2C=kmeans(exam3scaled,centers=2)
 cluster2C
 cluster2C$cluster
 cbind(exam3,group=cluster2C$cluster)
-
-
-
-
-
