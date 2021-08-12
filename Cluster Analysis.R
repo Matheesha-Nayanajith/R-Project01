@@ -87,3 +87,10 @@ rect.hclust(hc.average, h=100)
 
 
 abline(h=100)
+
+#data sets----
+?mtcars
+?women
+?studentselection 
+
+
