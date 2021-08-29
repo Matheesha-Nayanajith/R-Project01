@@ -22,3 +22,23 @@ df %>% filter(mpg > mean(mpg))
 df %>% filter(cyl == 4,disp>90)
 head(airquality)
 range(df$disp)
+
+#NOT operator
+!(f < 5)
+f < 5
+
+is.numeric(5)
+!is.numeric(5)
+
+
+c(TRUE, TRUE, FALSE) & c(TRUE, FALSE, FALSE)
+
+c(TRUE, TRUE, FALSE) | c(TRUE, FALSE, FALSE)
+
+!c(TRUE, FALSE, FALSE)
+
+c(TRUE, TRUE, FALSE) && c(TRUE, FALSE, FALSE)
+c(TRUE, TRUE, FALSE) || c(FALSE, FALSE, FALSE)
+
+c(TRUE, TRUE, FALSE) && c(TRUE, FALSE, FALSE)
+c(TRUE, TRUE, FALSE) || c(FALSE, FALSE, FALSE)
