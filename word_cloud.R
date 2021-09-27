@@ -55,3 +55,12 @@ arrange(airquality, desc(Month), Day)#arrange the rows in the descending order o
 #Testing 
 #Testing 
 #Testing
+
+
+?plot
+
+X1 = 1:10
+Y1 = X1^2
+X1
+Y1
+plot(x=X1 , y=Y1)
